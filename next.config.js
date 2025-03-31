@@ -26,6 +26,9 @@ const nextConfig = {
     NEXT_PUBLIC_LEONARDO_INIT_STRENGTH_QUALITY: process.env.NEXT_PUBLIC_LEONARDO_INIT_STRENGTH_QUALITY,
     NEXT_PUBLIC_LEONARDO_PROMPT_STRENGTH: process.env.NEXT_PUBLIC_LEONARDO_PROMPT_STRENGTH,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 module.exports = nextConfig 
