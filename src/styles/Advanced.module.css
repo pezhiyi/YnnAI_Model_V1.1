@@ -1,0 +1,232 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.description {
+  font-size: 1rem;
+  color: #666;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex: 1;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+.inputSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.resultSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.canvasContainer, .referenceContainer, .promptContainer, .resultContainer {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.canvasContainer:hover, .referenceContainer:hover, .promptContainer:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+}
+
+.canvasContainer h2, .referenceContainer h2, .promptContainer h2, .resultSection h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.hint {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.canvas {
+  width: 100%;
+  min-height: 200px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.canvas:hover {
+  background-color: #e8e8e8;
+}
+
+.referencePreview {
+  width: 100%;
+  height: 200px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.referencePreview:hover {
+  background-color: #e8e8e8;
+}
+
+.referencePreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #aaa;
+  font-size: 2rem;
+}
+
+.fileInput {
+  display: none;
+}
+
+.translationTextarea {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.textareaWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.textareaWrapper label {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.textareaWrapper textarea {
+  width: 100%;
+  height: 120px;
+  padding: 0.8rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  resize: none;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: border-color 0.3s ease;
+}
+
+.textareaWrapper textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.processButton {
+  width: 100%;
+  padding: 1rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.processButton:hover {
+  background-color: #3a80d2;
+}
+
+.processButton:disabled {
+  background-color: #a0c0e8;
+  cursor: not-allowed;
+}
+
+.error {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: 8px;
+  color: #d32f2f;
+  font-size: 0.9rem;
+}
+
+.message {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background-color: rgba(0, 128, 0, 0.1);
+  border-radius: 8px;
+  color: #388e3c;
+  font-size: 0.9rem;
+}
+
+.resultContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.resultImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* 添加响应式设计 */
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+  }
+  
+  .translationTextarea {
+    flex-direction: column;
+  }
+  
+  .container {
+    gap: 1rem;
+  }
+}
